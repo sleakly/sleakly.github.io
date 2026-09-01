@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10151d">
+    <title>Jellyfin</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Jellyfin home">
+        <span class="mark" aria-hidden="true">◆</span>
+        <span>Jellyfin</span>
+      </a>
+      <div class="status"><span class="status-dot" aria-hidden="true"></span><span id="status-text">Connecting…</span></div>
+    </header>
+
+    <main>
+      <iframe id="jellyfin" title="Jellyfin server" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe>
+
+      <section id="notice" class="notice" hidden>
+        <div class="notice-card">
+          <span class="notice-icon" aria-hidden="true">◆</span>
+          <p class="eyebrow">ONE-TIME SERVER SETUP</p>
+          <h1>Your media, right here.</h1>
+          <p id="notice-message" class="message"></p>
+          <ol>
+            <li>Put Jellyfin behind an HTTPS reverse proxy or secure tunnel.</li>
+            <li>Allow this GitHub Pages origin to frame the Jellyfin page.</li>
+            <li>Replace <code>serverUrl</code> in <code>config.js</code> with that HTTPS address.</li>
+          </ol>
+          <p class="security-note">Your current address remains configured; browsers simply do not allow an HTTPS page to embed an insecure HTTP server.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
