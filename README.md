@@ -4,7 +4,7 @@ This static site embeds Jellyfin in a full-page `iframe`, so the browser stays o
 
 ## Required deployment setup
 
-GitHub Pages is served over HTTPS. Browsers block an HTTPS page from embedding the currently configured HTTP endpoint (`http://99.53.73.35:8096`) as mixed content, and a static GitHub Pages site cannot act as a reverse proxy.
+GitHub Pages is served over HTTPS, so the embedded Jellyfin endpoint is configured as `https://nwjellyfinserver.duckdns.org:8920`.
 
 1. Give Jellyfin an HTTPS endpoint using a reverse proxy (Caddy, nginx, or a secure tunnel) and a hostname with a valid TLS certificate.
 2. Configure the proxy/Jellyfin response headers to permit framing by this site's exact GitHub Pages origin. Do not allow arbitrary origins.
