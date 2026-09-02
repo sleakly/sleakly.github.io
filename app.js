@@ -4,15 +4,11 @@
   const frame = document.querySelector("#jellyfin");
   const notice = document.querySelector("#notice");
   const noticeMessage = document.querySelector("#notice-message");
-  const statusText = document.querySelector("#status-text");
-  const status = document.querySelector(".status");
   const configuredUrl = window.JELLYFIN_CONFIG?.serverUrl;
 
   function showNotice(message) {
     noticeMessage.textContent = message;
     notice.hidden = false;
-    status.classList.add("is-offline");
-    statusText.textContent = "Setup required";
   }
 
   if (!configuredUrl) {
@@ -36,7 +32,4 @@
 
   // Embedding keeps the visitor on the GitHub Pages URL; it never navigates or redirects.
   frame.src = serverUrl.href;
-  frame.addEventListener("load", () => {
-    statusText.textContent = "Server loaded";
-  });
 })();
